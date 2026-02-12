@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import s1 from "../assets/services/s1.jpg";
 import s2 from "../assets/services/s2.PNG";
 import s3 from "../assets/services/s3.jpg";
@@ -7,6 +8,8 @@ import s6 from "../assets/services/s6.PNG";
 import "./Services.css";
 
 export default function Services() {
+  const rowsRef = useRef([]);
+
   const services = [
     {
       title: "Holistic Beauty Services",
@@ -40,6 +43,25 @@ export default function Services() {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    rowsRef.current.forEach((row) => {
+      if (row) observer.observe(row);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="services" className="services-section">
       <div className="services-header">
@@ -54,7 +76,10 @@ export default function Services() {
         {services.map((service, index) => (
           <div
             key={index}
-            className={`service-row ${index % 2 !== 0 ? "reverse" : ""}`}
+            ref={(el) => (rowsRef.current[index] = el)}
+            className={`service-row ${
+              index % 2 !== 0 ? "reverse" : ""
+            }`}
           >
             <div
               className="service-image"

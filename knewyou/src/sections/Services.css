@@ -55,6 +55,16 @@
   gap: 70px;
   align-items: center;
   margin-bottom: 100px;
+
+  /* Animation base */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.service-row.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-row:last-child {
@@ -80,7 +90,7 @@
   border-radius: 22px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s ease;
+  transition: transform 0.7s ease;
 }
 
 .service-image::after {
@@ -90,12 +100,12 @@
   background: linear-gradient(
     to bottom,
     rgba(56, 34, 15, 0.08),
-    rgba(56, 34, 15, 0.2)
+    rgba(56, 34, 15, 0.25)
   );
 }
 
 .service-row:hover .service-image {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 /* ============================= */
@@ -131,6 +141,18 @@
   line-height: 1.85;
   color: #6b4a36;
   max-width: 480px;
+}
+
+/* ============================= */
+/* STAGGER EFFECT */
+/* ============================= */
+
+.service-row:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+
+.service-row:nth-child(even) {
+  transition-delay: 0.2s;
 }
 
 /* ============================= */
