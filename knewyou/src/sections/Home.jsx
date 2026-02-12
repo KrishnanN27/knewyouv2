@@ -1,5 +1,8 @@
 import heroImage from "../assets/home/hero/hero.jpg";
 import logo from "../assets/home/hero/logo.png";
+import familyImg from "../assets/home/pillars/familyfirst.jpg";
+import restoreImg from "../assets/home/pillars/resotoratice.jpg";
+import wiseImg from "../assets/home/pillars/wisebeauty.PNG";
 import "./Home.css";
 
 export default function Home() {
@@ -42,24 +45,43 @@ export default function Home() {
 </section>
 
       {/* Pillars Section */}
-      <section className="pillars-section">
-        <div className="pillars">
-          <div className="pillar">
-            <h3>Wise Beauty</h3>
-            <p>Rooted in presence, care, and integrity</p>
-          </div>
+    <section className="pillars-section">
+  <div className="pillars">
 
-          <div className="pillar">
-            <h3>Family First</h3>
-            <p>Designed with families in mind</p>
-          </div>
+    <div
+      className="pillar"
+      style={{ backgroundImage: `url(${familyImg})` }}
+    >
+      <div className="pillar-content">
+        <h3>Family First</h3>
+        <p>Designed with families in mind.</p>
+      </div>
+    </div>
 
-          <div className="pillar">
-            <h3>Restorative Community</h3>
-            <p>Supporting healing, growth, and meaningful connection</p>
-          </div>
-        </div>
-      </section>
+    <div
+      className="pillar"
+      style={{ backgroundImage: `url(${wiseImg})` }}
+    >
+      <div className="pillar-content">
+        <h3>Wise Beauty</h3>
+        <p>Rooted in presence, care and integrity.</p>
+      </div>
+    </div>
+
+    <div
+      className="pillar"
+      style={{ backgroundImage: `url(${restoreImg})` }}
+    >
+      <div className="pillar-content">
+        <h3>Restorative Community</h3>
+        <p>Supporting healing, growth and meaningful connection.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
     </>
   );
 }
