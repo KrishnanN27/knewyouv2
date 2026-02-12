@@ -8,80 +8,85 @@ import "./Home.css";
 export default function Home() {
   return (
     <>
-<section
-  id="home"
-  className="home-hero"
-  style={{ backgroundImage: `url(${heroImage})` }}
->
-  <div className="hero-overlay">
-    <div className="hero-content">
+      {/* Intro Section */}
+      <section className="intro-section">
+        <div className="intro-container">
+          <img src={logo} alt="Knew You Logo" className="intro-logo" />
 
-      <img src={logo} alt="Knew You Logo" className="hero-logo" />
+          <div className="intro-text">
+            <h2>A Family-Centered Beauty & Restoration Movement</h2>
+            <p>
+              Rooted in wisdom. Built for families. Designed to restore beauty,
+              belonging, and wholeness — inside and out.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="home"
+        className="home-hero"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="hero-overlay">
+          <div className="hero-content">
 
-      <h1>
-        The Heart Behind <br />
-        <span>Knew You</span>
-      </h1>
+            <img src={logo} alt="Knew You Logo" className="hero-logo" />
 
-      <p className="hero-quote">
-        We don’t create beauty — we uncover it. <br />
-        We don’t perform identity — we return to it.
-      </p>
+            <h1>
+              The Heart Behind <br />
+              <span>Knew You</span>
+            </h1>
 
-      <p className="hero-author">Knew You</p>
+            <div className="hero-cta">
+              <a href="#services" className="primary-btn">
+                Explore Our Services
+              </a>
 
-      <div className="hero-cta">
-        <a href="#services" className="primary-btn">
-          Explore Our Services
-        </a>
+              <a href="#connect" className="secondary-btn">
+                Connect With Us
+              </a>
+            </div>
 
-        <a href="#connect" className="secondary-btn">
-          Connect With Us
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
       {/* Pillars Section */}
-    <section className="pillars-section">
-  <div className="pillars">
+      <section className="pillars-section">
+        <div className="pillars">
 
-    <div
-      className="pillar"
-      style={{ backgroundImage: `url(${familyImg})` }}
-    >
-      <div className="pillar-content">
-        <h3>Family First</h3>
-        <p>Designed with families in mind.</p>
-      </div>
-    </div>
+          <div
+            className="pillar"
+            style={{ backgroundImage: `url(${familyImg})` }}
+          >
+            <div className="pillar-content">
+              <h3>Family First</h3>
+              <p>Designed with families in mind.</p>
+            </div>
+          </div>
 
-    <div
-      className="pillar"
-      style={{ backgroundImage: `url(${wiseImg})` }}
-    >
-      <div className="pillar-content">
-        <h3>Wise Beauty</h3>
-        <p>Rooted in presence, care and integrity.</p>
-      </div>
-    </div>
+          <div
+            className="pillar"
+            style={{ backgroundImage: `url(${wiseImg})` }}
+          >
+            <div className="pillar-content">
+              <h3>Wise Beauty</h3>
+              <p>Rooted in presence, care and integrity.</p>
+            </div>
+          </div>
 
-    <div
-      className="pillar"
-      style={{ backgroundImage: `url(${restoreImg})` }}
-    >
-      <div className="pillar-content">
-        <h3>Restorative Community</h3>
-        <p>Supporting healing, growth and meaningful connection.</p>
-      </div>
-    </div>
+          <div
+            className="pillar"
+            style={{ backgroundImage: `url(${restoreImg})` }}
+          >
+            <div className="pillar-content">
+              <h3>Restorative Community</h3>
+              <p>Supporting healing, growth and meaningful connection.</p>
+            </div>
+          </div>
 
-  </div>
-</section>
-
-
+        </div>
+      </section>
     </>
   );
 }
