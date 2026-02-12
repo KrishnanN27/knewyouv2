@@ -11,26 +11,29 @@
 /* ============================= */
 /* HERO SECTION */
 /* ============================= */
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
 .home-hero {
   height: 100vh;
   background-size: cover;
-  background-position: right center; /* crops properly */
+  background-position: right center;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
 }
 
-/* Left-side gradient overlay */
+/* Softer gradient overlay for better text contrast */
 .hero-overlay {
   width: 100%;
   height: 100%;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.6) 35%,
-    rgba(0, 0, 0, 0.2) 60%,
-    rgba(0, 0, 0, 0) 85%
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.65) 35%,
+    rgba(255, 255, 255, 0.2) 60%,
+    rgba(255, 255, 255, 0) 85%
   );
   display: flex;
   align-items: center;
@@ -40,7 +43,7 @@
 .hero-content {
   max-width: 600px;
   margin-left: 8%;
-  color: var(--white);
+  color: #383389; /* Your requested text color */
   animation: fadeUp 1s ease forwards;
 }
 
@@ -50,13 +53,14 @@
   font-weight: 700;
   margin-bottom: 25px;
   letter-spacing: -1px;
+  color: #383389;
 }
 
 .hero-content p {
   font-size: 1.15rem;
   line-height: 1.8;
   margin-bottom: 40px;
-  color: var(--text-light);
+  color: #383389;
 }
 
 /* ============================= */
@@ -77,9 +81,10 @@
   transition: all 0.3s ease;
 }
 
+/* Primary Button */
 .primary-btn {
   background: var(--primary);
-  color: white;
+  color: #383389;
 }
 
 .primary-btn:hover {
@@ -87,16 +92,20 @@
   transform: translateY(-3px);
 }
 
+/* Secondary Button */
 .secondary-btn {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #383389;
+  color: #383389;
+  background: transparent;
 }
 
 .secondary-btn:hover {
-  background: white;
-  color: black;
+  background: rgba(56, 51, 137, 0.08); /* very soft tint */
+  border-color: #383389;
+  color: #383389;
   transform: translateY(-3px);
 }
+
 
 /* ============================= */
 /* PILLARS SECTION */
