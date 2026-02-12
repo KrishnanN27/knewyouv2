@@ -31,6 +31,7 @@
       rgba(236, 224, 209, 0.96)
     );
 
+  /* border-bottom: 1px solid rgba(150, 114, 89, 0.25); */
   transition: all 0.3s ease;
 }
 
@@ -172,10 +173,13 @@
 }
 
 .connect-button:hover {
-  background: linear-gradient(135deg, #38220f, #967259);
+  background: linear-gradient(135deg, #c5a253, #e0c27a);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(150, 114, 89, 0.4);
+  box-shadow:
+    0 8px 25px rgba(197, 162, 83, 0.45),
+    0 0 15px rgba(224, 194, 122, 0.4);
 }
+
 
 .connect-button:active {
   transform: translateY(-1px);

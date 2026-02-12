@@ -1,0 +1,178 @@
+/* ============================= */
+/* ROOT VARIABLES */
+/* ============================= */
+:root {
+  --primary: #b48a78;
+  --primary-dark: #8f6c5e;
+  --text-light: #eaeaea;
+  --white: #ffffff;
+}
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+.home-hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: right center; /* crops properly */
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Left-side gradient overlay */
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.6) 35%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0) 85%
+  );
+  display: flex;
+  align-items: center;
+}
+
+/* Content aligned LEFT */
+.hero-content {
+  max-width: 600px;
+  margin-left: 8%;
+  color: var(--white);
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: 3.3rem;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  color: var(--text-light);
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 15px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* ============================= */
+/* PILLARS SECTION */
+/* ============================= */
+.pillars-section {
+  background: #ffffff;
+  padding: 100px 20px;
+}
+
+.pillars {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.pillar {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  background: #faf7f4;
+  transition: 0.4s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-8px);
+}
+
+.pillar h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--primary-dark);
+}
+
+.pillar p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* ANIMATION */
+/* ============================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media (max-width: 900px) {
+  .home-hero {
+    background-position: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+}

@@ -42,7 +42,13 @@ function Navbar() {
           <a href="#services">Services</a>
           {/* <a href="#community">Community</a> */}
           {/* <a href="#events">Events</a> */}
-          <button className="connect-button">Connect</button>
+<a
+  href="#connect"
+  className="connect-button"
+  onClick={() => setMobileMenuOpen(false)}
+>
+  Connect
+</a>
         </div>
       </div>
     </nav>
