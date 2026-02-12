@@ -11,7 +11,7 @@ function Footer() {
         </div>
 
         <div className="footer-links">
-          <a href="#connect">Contact</a>
+          <a href="#contact">Contact</a>
           <a href="#services">Services</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms & Conditions</a>

@@ -124,3 +124,8 @@ html {
 .newsletter-btn:hover {
   opacity: 0.9;
 }
+button,
+input,
+textarea {
+  font-family: inherit;
+}
