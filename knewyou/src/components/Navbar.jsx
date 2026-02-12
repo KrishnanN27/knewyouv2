@@ -1,55 +1,60 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import logo from "../assets/logo/logo.png";
-import './Navbar.css';
+import "./Navbar.css";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Add scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 40);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
+  }, [mobileMenuOpen]);
+
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-inner">
+
         {/* Logo */}
         <div className="logo">
           <img src={logo} alt="Logo" />
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle */}
         <button
-          className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+          className={`mobile-menu-toggle ${mobileMenuOpen ? "active" : ""}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Toggle Menu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        {/* Navigation Links */}
-        <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
-          <a href="#home">Home</a>
-          <a href="#vision">Vision</a>
-          <a href="#services">Services</a>
-          {/* <a href="#community">Community</a> */}
-          {/* <a href="#events">Events</a> */}
-<a
-  href="#connect"
-  className="connect-button"
-  onClick={() => setMobileMenuOpen(false)}
->
-  Connect
-</a>
+        {/* Links */}
+        <div className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
+          <a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a>
+          <a href="#vision" onClick={() => setMobileMenuOpen(false)}>Vision</a>
+          <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
+
+          <a
+            href="#connect"
+            className="connect-button"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Connect
+          </a>
         </div>
+
       </div>
     </nav>
   );

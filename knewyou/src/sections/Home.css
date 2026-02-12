@@ -95,43 +95,89 @@
 }
 
 /* ============================= */
-/* CTA + BUTTONS */
+/* CTA + GLASS BUTTONS */
 /* ============================= */
 
 .hero-cta {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
+/* Shared Base Style */
 .primary-btn,
 .secondary-btn {
-  padding: 15px 34px;
+  position: relative;
+  padding: 15px 36px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
+/* ============================= */
+/* PRIMARY — GLASS GOLD */
+/* ============================= */
+
 .primary-btn {
-  background: #dfb7a6;
-  color: #383389;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.2);
+  color: #38220f;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 8px 30px rgba(150, 114, 89, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+/* Shine sweep */
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.6s ease;
+}
+
+.primary-btn:hover::before {
+  transform: translateX(100%);
 }
 
 .primary-btn:hover {
-  background: #ffc6ad;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 40px rgba(197, 162, 83, 0.35),
+    0 0 20px rgba(197, 162, 83, 0.4);
 }
 
+/* ============================= */
+/* SECONDARY — OUTLINE GLASS */
+/* ============================= */
+
 .secondary-btn {
-  border: 2px solid #383389;
-  color: #383389;
-  background: #dfb7a6;
+  background: rgba(255, 255, 255, 0.15);
+  color: #38220f;
+  border: 1px solid rgba(56, 34, 15, 0.3);
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .secondary-btn:hover {
-  background: #ffc6ad;
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 30px rgba(56, 34, 15, 0.2);
 }
 
 /* ============================= */
