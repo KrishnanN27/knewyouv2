@@ -1,0 +1,278 @@
+/* Enhanced Navbar - Building on your existing structure */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: 90px;
+  padding: 0 2.5rem;
+
+  display: flex;
+  align-items: center;
+
+  backdrop-filter: blur(20px);
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(150, 114, 89, 0.2),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(197, 162, 83, 0.15),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(200, 175, 150, 0.92),
+      rgba(219, 193, 172, 0.94),
+      rgba(236, 224, 209, 0.96)
+    );
+
+  transition: all 0.3s ease;
+}
+
+/* Decorative top accent */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #c5a253,
+    #967259,
+    #c5a253
+  );
+}
+
+/* Scrolled state - enhanced shadow */
+.navbar.scrolled {
+  box-shadow: 0 4px 25px rgba(56, 34, 15, 0.15);
+}
+
+.nav-inner {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+.logo img {
+  height: 115px;
+  object-fit: contain;
+  transform: translateY(5px);
+  filter: drop-shadow(0 2px 8px rgba(56, 34, 15, 0.1));
+  transition: filter 0.3s ease;
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 4px 12px rgba(56, 34, 15, 0.2));
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 2.5rem;
+  text-decoration: none;
+  color: #38220f;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Animated underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #c5a253, #967259);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #967259;
+  transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+  width: 60%;
+}
+
+/* Connect Button - Enhanced */
+.connect-button {
+  margin-left: 2.5rem;
+  background: linear-gradient(135deg, #967259, #c5a253);
+  color: #ece0d1;
+  padding: 0.7rem 2rem;
+  border: none;
+  cursor: pointer;
+  font-family: "Restora", serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(150, 114, 89, 0.3);
+}
+
+/* Shimmer effect on button */
+.connect-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.connect-button:hover::before {
+  left: 100%;
+}
+
+.connect-button:hover {
+  background: linear-gradient(135deg, #38220f, #967259);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(150, 114, 89, 0.4);
+}
+
+.connect-button:active {
+  transform: translateY(-1px);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #38220f;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .navbar {
+    height: 80px;
+    padding: 0 1.5rem;
+  }
+
+  .logo img {
+    height: 90px;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(236, 224, 209, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid rgba(150, 114, 89, 0.25);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .nav-links a::after {
+    bottom: -6px;
+  }
+
+  .connect-button {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .logo img {
+    height: 75px;
+  }
+}
