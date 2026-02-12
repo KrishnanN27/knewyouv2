@@ -1,0 +1,222 @@
+/* ============================= */
+/* VISION SECTION */
+/* ============================= */
+
+.vision-section {
+  background: #f5efe9;
+}
+
+/* ============================= */
+/* HERO INTRO */
+/* ============================= */
+
+.vision-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.vision-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 34, 15, 0.45),
+    rgba(56, 34, 15, 0.6)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision-hero-content {
+  text-align: center;
+  max-width: 900px;
+  padding: 40px;
+  color: #ffffff;
+}
+
+.vision-hero-content h2 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.vision-statement {
+  font-size: 1.6rem;
+  line-height: 1.9;
+  font-weight: 400;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ============================= */
+/* CONTENT AREA */
+/* ============================= */
+
+.vision-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 140px 40px;
+}
+
+/* ============================= */
+/* MISSION PILLARS */
+/* ============================= */
+
+.vision-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px;
+  margin-bottom: 120px;
+  text-align: center;
+}
+
+.pillar-card {
+  padding: 50px 35px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  backdrop-filter: blur(6px);
+  transition: all 0.4s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(56, 34, 15, 0.15);
+}
+
+.pillar-icon {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #c5a253;
+}
+
+.pillar-card h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #38220f;
+}
+
+.pillar-card p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #6b4a36;
+}
+
+/* ============================= */
+/* WHAT WE STAND FOR */
+/* ============================= */
+
+.vision-stand {
+  margin-bottom: 120px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vision-stand h3 {
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+  color: #38220f;
+  text-align: center;
+}
+
+.vision-stand ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vision-stand li {
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  position: relative;
+  padding-left: 30px;
+  color: #5c463a;
+}
+
+.vision-stand li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #c5a253;
+}
+
+/* ============================= */
+/* HEART BEHIND */
+/* ============================= */
+
+.vision-heart {
+  max-width: 800px;
+  margin: 0 auto 140px;
+}
+
+.vision-heart h3 {
+  font-size: 2rem;
+  margin-bottom: 35px;
+  color: #38220f;
+  text-align: center;
+}
+
+.vision-heart p {
+  margin-bottom: 25px;
+  line-height: 1.9;
+  font-size: 1.1rem;
+  color: #6b4a36;
+}
+
+/* ============================= */
+/* QUOTE CALLOUT */
+/* ============================= */
+
+.vision-quote {
+  text-align: center;
+  padding: 100px 60px;
+  border-top: 1px solid rgba(150, 114, 89, 0.2);
+  border-bottom: 1px solid rgba(150, 114, 89, 0.2);
+  background: transparent;
+}
+
+.vision-quote blockquote {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.9;
+  max-width: 800px;
+  margin: auto;
+  color: #38220f;
+}
+
+.vision-quote span {
+  display: block;
+  margin-top: 25px;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8f6c5e;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+  .vision-hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .vision-statement {
+    font-size: 1.2rem;
+  }
+
+  .vision-container {
+    padding: 100px 25px;
+  }
+
+  .pillar-card {
+    padding: 40px 25px;
+  }
+}
