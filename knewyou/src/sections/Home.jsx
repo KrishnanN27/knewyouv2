@@ -22,34 +22,33 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section
-        id="home"
-        className="home-hero"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="hero-overlay">
-          <div className="hero-content">
+   <section
+  id="home"
+  className="home-hero"
+  style={{ backgroundImage: `url(${heroImage})` }}
+>
+  <div className="hero-overlay">
+    <div className="hero-content">
 
-            <img src={logo} alt="Knew You Logo" className="hero-logo" />
+      <h1>
+        The Heart Behind <br />
+        <span>Knew You</span>
+      </h1>
 
-            <h1>
-              The Heart Behind <br />
-              <span>Knew You</span>
-            </h1>
+      <div className="hero-cta">
+        <a href="#services" className="primary-btn">
+          Explore Our Services
+        </a>
 
-            <div className="hero-cta">
-              <a href="#services" className="primary-btn">
-                Explore Our Services
-              </a>
+        <a href="#connect" className="secondary-btn">
+          Connect With Us
+        </a>
+      </div>
 
-              <a href="#connect" className="secondary-btn">
-                Connect With Us
-              </a>
-            </div>
+    </div>
+  </div>
+</section>
 
-          </div>
-        </div>
-      </section>
 
       {/* Pillars Section */}
       <section className="pillars-section">
