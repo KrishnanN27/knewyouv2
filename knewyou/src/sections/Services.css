@@ -1,0 +1,178 @@
+/* ============================= */
+/* SERVICES SECTION */
+/* ============================= */
+
+.services-section {
+  padding: 160px 40px;
+  background:
+    linear-gradient(
+      180deg,
+      #e6d3c3 0%,
+      #d8bda8 50%,
+      #cfae97 100%
+    );
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.services-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 140px;
+}
+
+.services-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #38220f;
+  font-weight: 500;
+}
+
+.services-header p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #6b4a36;
+}
+
+/* ============================= */
+/* WRAPPER */
+/* ============================= */
+
+.services-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ============================= */
+/* SERVICE ROW */
+/* ============================= */
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  margin-bottom: 160px;
+}
+
+.service-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Reverse layout */
+.service-row.reverse {
+  direction: rtl;
+}
+
+.service-row.reverse .service-content {
+  direction: ltr;
+}
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+
+.service-image {
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.service-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 34, 15, 0.1),
+    rgba(56, 34, 15, 0.25)
+  );
+}
+
+.service-row:hover .service-image {
+  transform: scale(1.03);
+}
+
+/* ============================= */
+/* CONTENT */
+/* ============================= */
+
+.service-content {
+  padding: 10px 0;
+}
+
+.service-content h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #38220f;
+  font-weight: 500;
+}
+
+.service-content p {
+  font-size: 1.1rem;
+  line-height: 1.95;
+  color: #6b4a36;
+  max-width: 520px;
+}
+
+/* Subtle decorative divider under heading */
+.service-content h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin-top: 14px;
+  background: linear-gradient(
+    90deg,
+    #c5a253,
+    #967259
+  );
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1000px) {
+  .service-row {
+    gap: 60px;
+  }
+
+  .service-image {
+    height: 380px;
+  }
+}
+
+@media (max-width: 900px) {
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-bottom: 120px;
+  }
+
+  .service-row.reverse {
+    direction: ltr;
+  }
+
+  .service-image {
+    height: 300px;
+  }
+
+  .services-section {
+    padding: 120px 25px;
+  }
+
+  .services-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .service-content h3 {
+    font-size: 1.6rem;
+  }
+}

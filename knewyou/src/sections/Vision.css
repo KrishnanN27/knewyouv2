@@ -3,8 +3,30 @@
 /* ============================= */
 
 .vision-section {
-  background: #f5efe9;
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(197, 162, 83, 0.08),
+      transparent 40%
+    ),
+    linear-gradient(
+      180deg,
+      #f8f4ef 0%,
+      #efe6dc 100%
+    );
 }
+.vision-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(150, 114, 89, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
 
 /* ============================= */
 /* HERO INTRO */
