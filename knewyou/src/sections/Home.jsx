@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <>
       {/* Intro Section */}
-      <section className="intro-section">
+      <section id="home" className="intro-section">
+
         <div className="intro-container">
           <img src={logo} alt="Knew You Logo" className="intro-logo" />
 
@@ -23,7 +24,6 @@ export default function Home() {
         </div>
       </section>
    <section
-  id="home"
   className="home-hero"
   style={{ backgroundImage: `url(${heroImage})` }}
 >
