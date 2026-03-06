@@ -1,0 +1,77 @@
+<!-- ══════════════════════════════════════════
+     02-HERO.HTML — Full-screen hero banner
+     Edit: location tag, each headline line,
+           subtitle text, CTA button labels.
+     Background photo → css/hero.css → .hero-bg
+══════════════════════════════════════════ -->
+<section id="hero">
+
+  <!-- Background image (set in hero.css → .hero-bg) -->
+  <div class="hero-bg" id="hero-bg" role="img" aria-label="Hero background"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- Decorative compass ring (top-right) -->
+  <div class="hero-corner" aria-hidden="true">
+    <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="90" cy="90" r="88" stroke="rgba(201,164,107,0.22)" stroke-width="1"/>
+      <circle cx="90" cy="90" r="70" stroke="rgba(201,164,107,0.13)" stroke-width="1"/>
+      <circle cx="90" cy="90" r="50" stroke="rgba(201,164,107,0.08)" stroke-width="1"/>
+      <line x1="90" y1="2"   x2="90"  y2="178" stroke="rgba(201,164,107,0.08)" stroke-width="1"/>
+      <line x1="2"  y1="90"  x2="178" y2="90"  stroke="rgba(201,164,107,0.08)" stroke-width="1"/>
+      <circle cx="90" cy="90" r="5" fill="rgba(201,164,107,0.35)"/>
+    </svg>
+  </div>
+
+  <!-- Main content -->
+  <div class="hero-content">
+    <div class="hero-inner">
+
+      <!-- LOCATION / EYEBROW TAG -->
+      <div class="hero-tag">Highlands Ranch, Colorado</div>
+
+      <!-- HEADLINE — each .line is a separate animated line -->
+      <h1 class="hero-headline">
+        <span class="line"><span>A Family-Centered</span></span>
+        <span class="line"><span>Beauty &amp; Restoration</span></span>
+        <span class="line"><span>Movement</span></span>
+      </h1>
+
+      <!-- SUBTITLE -->
+      <p class="hero-sub">
+        Rooted in Wisdom. Built for Families.<br>
+        Designed to restore beauty, belonging,<br>
+        and wholeness — inside and out.
+      </p>
+
+      <!-- CTA BUTTONS -->
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-primary">Work With Us</a>
+        <a href="#why"      class="btn btn-outline">Our Story</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Stats strip (bottom-right, hidden on mobile) -->
+  <div class="hero-stats" aria-hidden="true">
+    <div class="hero-stat">
+      <div class="hero-stat-num">18<em style="font-size:1.3rem;font-style:italic;color:var(--gold)">+</em></div>
+      <div class="hero-stat-label">Years of Service</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">5</div>
+      <div class="hero-stat-label">Countries Served</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">1</div>
+      <div class="hero-stat-label">Vision. Whole Families.</div>
+    </div>
+  </div>
+
+  <!-- Animated scroll hint -->
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+
+</section>

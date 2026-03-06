@@ -1,0 +1,194 @@
+/* ═══════════════════════════════════════════════
+   PILLARS.CSS — Section 4: Three Core Pillars
+   Edit: card hover colors, icon border, bg text,
+         image height (.pillar-img height)
+═══════════════════════════════════════════════ */
+
+#pillars {
+  background: var(--cream);
+  padding: var(--section-v) var(--section-h);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large background word for depth */
+.pillars-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--f-display);
+  font-size: clamp(6rem, 16vw, 14rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--parchment);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.pillars-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+.pillars-header h2 {
+  font-family: var(--f-display);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: var(--brown-deep);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.pillars-header p {
+  font-family: var(--f-elegant);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+/* Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+.pillar-card {
+  background: var(--warm-white);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+.pillar-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 56px rgba(74, 46, 26, 0.13);
+  z-index: 2;
+}
+.pillar-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Image area */
+.pillar-img-wrap {
+  width: 100%;
+  height: 220px; /* ← change this to make images taller/shorter */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.pillar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.pillar-card:hover .pillar-img {
+  transform: scale(1.05); /* subtle zoom on hover */
+}
+
+/* Text body below the image */
+.pillar-body {
+  padding: 40px 36px 44px;
+  position: relative;
+  flex: 1;
+}
+
+/* Background number */
+.pillar-number {
+  font-family: var(--f-display);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--parchment);
+  line-height: 1;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  transition: color 0.3s;
+  user-select: none;
+}
+.pillar-card:hover .pillar-number {
+  color: rgba(228, 201, 144, 0.45);
+}
+
+/* Icon circle */
+.pillar-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+.pillar-card:hover .pillar-icon-wrap {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.pillar-body h3 {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--brown-deep);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+.pillar-body p {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 900px) {
+  .pillars-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pillar-img-wrap {
+    height: 200px;
+  }
+}
+@media (max-width: 560px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .pillar-img-wrap {
+    height: 220px;
+  }
+  .pillar-body {
+    padding: 32px 28px 36px;
+  }
+}
+/* Portrait images — crop from top so faces/subjects aren't cut off */
+.pillar-img--top {
+  object-position: center top;
+}

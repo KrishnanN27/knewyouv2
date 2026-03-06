@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════════
+   SERVICES.CSS — Section 8: Work With Us
+   Edit: row hover color, tag badge styles,
+         header layout
+═══════════════════════════════════════════════ */
+
+#services {
+  background: var(--warm-white);
+  padding: var(--section-v) var(--section-h);
+}
+
+/* Split header */
+.services-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 64px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid var(--parchment);
+}
+.services-header-left h2 {
+  font-family: var(--f-display);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: var(--brown-deep);
+  line-height: 1.1;
+  margin-top: 8px;
+}
+.services-header-right {
+  font-family: var(--f-elegant);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 320px;
+  line-height: 1.7;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* List layout */
+.services-list { list-style: none; }
+
+.service-row {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  align-items: center;
+  gap: 28px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--parchment);
+  position: relative;
+  transition: padding .25s ease, background .25s ease, margin .25s ease;
+}
+
+/* Arrow that appears on hover */
+.service-row::after {
+  content: '→';
+  position: absolute;
+  right: 12px; top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  font-size: 1.3rem;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity .25s, transform .25s;
+}
+.service-row:hover {
+  padding-left: 16px;
+  padding-right: 48px;
+  margin: 0 -16px;
+  background: var(--cream);
+  border-radius: var(--radius);
+}
+.service-row:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.service-num {
+  font-family: var(--f-display);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  color: var(--gold);
+}
+
+.service-body h3 {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--brown-deep);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.service-body p {
+  font-family: var(--f-elegant);
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 620px;
+}
+
+/* Tag badge */
+.service-tag {
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 7px 12px;
+  border: 1px solid var(--parchment);
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: border-color .22s, color .22s;
+}
+.service-row:hover .service-tag {
+  border-color: var(--gold);
+  color: var(--gold-deep);
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 900px) {
+  .services-header        { flex-direction: column; align-items: flex-start; }
+  .services-header-right  { text-align: left; max-width: 100%; }
+  .service-tag            { display: none; } /* hides tag on medium screens */
+}
+@media (max-width: 560px) {
+  .service-row            { grid-template-columns: 52px 1fr; gap: 16px; padding: 28px 0; }
+  .service-row:hover      { padding-left: 10px; padding-right: 10px; margin: 0 -10px; }
+}

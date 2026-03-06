@@ -1,0 +1,62 @@
+<!-- ══════════════════════════════════════════
+     01-NAV.HTML — Fixed top navigation
+     Edit: logo text, link labels & hrefs,
+           CTA text, mobile menu links,
+           location tagline at bottom
+══════════════════════════════════════════ -->
+
+<!-- ── Full-screen mobile overlay ── -->
+<div id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+
+  <!-- Links (mirror the desktop nav) -->
+  <a href="#why"        class="mobile-link">Our Story</a>
+  <a href="#foundation" class="mobile-link">Foundation</a>
+  <a href="#services"   class="mobile-link">Work With Us</a>
+  <a href="#founder"    class="mobile-link">Founder</a>
+  <a href="#testimonials" class="mobile-link">Community</a>
+
+  <!-- Mobile CTA -->
+  <a href="#connect" class="mobile-cta">Connect With Us</a>
+
+  <!-- Location tag at base of menu -->
+  <span class="mobile-location">Highlands Ranch, Colorado</span>
+</div>
+
+<!-- ── Main nav bar ── -->
+<nav id="nav" aria-label="Main navigation">
+
+  <!-- LOGO — swap text or add <img> here -->
+  <a href="#hero" class="nav-logo" aria-label="Knew You — home">
+    <em>Knew</em> You
+  </a>
+
+  <!-- DESKTOP LINKS -->
+  <div class="nav-links" role="list">
+    <a href="#why"          class="nav-link" role="listitem">Our Story</a>
+    <a href="#foundation"   class="nav-link" role="listitem">Foundation</a>
+    <a href="#services"     class="nav-link" role="listitem">Work With Us</a>
+    <a href="#founder"      class="nav-link" role="listitem">Founder</a>
+    <a href="#testimonials" class="nav-link" role="listitem">Community</a>
+  </div>
+
+  <!-- RIGHT SIDE: CTA + hamburger -->
+  <div style="display:flex;align-items:center;gap:12px;">
+    <!-- Desktop CTA button — hidden on mobile by CSS -->
+    <a href="#connect" class="nav-cta">Connect</a>
+
+    <!-- Hamburger (shown on mobile only) -->
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+</nav>
+
