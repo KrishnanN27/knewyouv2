@@ -1,52 +1,75 @@
 <!-- ══════════════════════════════════════════
-     06-FOUNDATION.HTML — Mission / Vision / Values
-     Edit: each cell's h3 title and paragraph text.
-     Add a value: copy a <li> and change its text.
-     Remove: delete the <li>.
-     Add a cell: copy a .foundation-cell block.
+     06-FOUNDATION.HTML — Mission / Vision / Faith
+     Three-pillar image + text layout.
+     Images: swap placeholders below with finals.
+       Block 1 (Mission)  → images/foundation/mvf-mission.jpg
+       Block 2 (Vision)   → images/foundation/mvf-vision.jpg
+       Block 3 (Faith)    → images/foundation/mvf-faith.jpg
+     Note: Three Core Pillars section removed per brief.
 ══════════════════════════════════════════ -->
 <section id="foundation">
-
   <div class="foundation-header reveal">
     <span class="eyebrow eyebrow--center">Our Foundation</span>
     <div class="gold-rule"></div>
     <h2>The Heart Behind Knew You</h2>
   </div>
 
-  <div class="foundation-layout stagger">
-
+  <!-- Three MVF blocks — each has image + text -->
+  <div class="mvf-grid stagger">
     <!-- MISSION -->
-    <div class="foundation-cell">
-      <h3>Mission</h3>
-      <p>To reawaken identity through reflective beauty, compassion, action, and faith-filled community — inviting families into grounded transformation through intentional services and meaningful belonging.</p>
+    <div class="mvf-block">
+      <div class="mvf-img-wrap">
+        <img
+          src="images/foundation/mission.jpeg"
+          alt="Restoration — warm family moment"
+          class="mvf-img"
+        />
+      </div>
+      <div class="mvf-body">
+        <h3 class="mvf-label">Mission</h3>
+        <p class="mvf-text">
+          Restoring individuals and families through spaces of care, connection,
+          and community.
+        </p>
+      </div>
     </div>
 
     <!-- VISION -->
-    <div class="foundation-cell">
-      <h3>Vision</h3>
-      <p>To build a new model for what it means to be truly beautiful — where generations are empowered, values are embodied, and purpose is reflected in daily life.</p>
+    <div class="mvf-block">
+      <div class="mvf-img-wrap">
+        <img
+          src="images/foundation/vision.jpeg"
+          alt="A new model of wellness and gathering"
+          class="mvf-img"
+        />
+      </div>
+      <div class="mvf-body">
+        <h3 class="mvf-label">Vision</h3>
+        <p class="mvf-text">
+          A new model of wellness and gathering where beauty, health, family
+          life, and meaningful connection exist together.
+        </p>
+      </div>
     </div>
 
     <!-- FAITH -->
-    <div class="foundation-cell">
-      <h3>Faith</h3>
-      <p>Our work is grounded in the belief that true restoration begins from within — that every person carries inherent dignity and beauty worthy of being seen, honored, and celebrated.</p>
+    <div class="mvf-block">
+      <div class="mvf-img-wrap">
+        <img
+          src="images/foundation/faith.jpeg"
+          alt="Rooted in faith and family"
+          class="mvf-img"
+        />
+      </div>
+      <div class="mvf-body">
+        <h3 class="mvf-label">Faith</h3>
+        <p class="mvf-text">
+          Rooted in biblical values that honor restoration, dignity, and the
+          strength of the family.
+        </p>
+        <!-- Scripture — centered, italic, gold/muted violet tone -->
+        <p class="mvf-scripture">"He restores my soul." &mdash; Psalm 23:3</p>
+      </div>
     </div>
-
-    <!-- CORE VALUES — full-width row -->
-    <div class="foundation-values">
-      <h3>Core Values</h3>
-      <ul class="values-list stagger">
-        <li>Restoration over performance</li>
-        <li>Beauty from the inside out</li>
-        <li>Faith as our foundation</li>
-        <li>Safe spaces for the whole family</li>
-        <li>Empowered self-expression</li>
-        <li>Community and connection</li>
-        <li>Wisdom in action</li>
-        <li>Presence over perfection</li>
-      </ul>
-    </div>
-
   </div>
 </section>

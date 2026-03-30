@@ -1,37 +1,61 @@
 <!-- ══════════════════════════════════════════
      04-BUILDING.HTML — "What We're Building"
-     Edit: headline, two body paragraphs, CTA.
-     Background photo → css/building.css → .building-img-bg
+     Left side: Google Maps embed — Highlands Ranch, CO
+     Right side: text content
 ══════════════════════════════════════════ -->
 <section id="building">
-
-  <!-- IMAGE SIDE — replace gradient with photo in building.css -->
-  <div class="building-img-side reveal-left">
-    <div class="building-img-bg"></div>
-    <div class="building-img-overlay"></div>
+  <!-- MAP SIDE -->
+  <div class="building-map-side reveal-left">
+    <div class="building-map-wrap">
+      <iframe
+        class="building-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98828.94048822447!2d-105.02080045!3d39.54822815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c8347b6519f9f%3A0xf3b5439dbb897e9d!2sHighlands%20Ranch%2C%20CO!5e0!3m2!1sen!2sus!4v1711000000000!5m2!1sen!2sus"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Knew You — Highlands Ranch, Colorado"
+      ></iframe>
+    </div>
+    <!-- Location badge over the map -->
+    <div class="building-map-badge">
+      <span class="building-map-badge__dot" aria-hidden="true"></span>
+      <span class="building-map-badge__text">Highlands Ranch, Colorado</span>
+    </div>
   </div>
 
   <!-- TEXT SIDE -->
   <div class="building-text-side">
     <div class="building-text-inner reveal-right">
-
       <span class="eyebrow eyebrow--light">What We're Building</span>
 
-      <!-- HEADLINE -->
-      <h2>A Space Designed<br><em>for the Whole Family</em></h2>
+      <h2>A Space Designed<br /><em>for the Whole Family</em></h2>
 
       <div class="building-accent-line"></div>
 
-      <!-- PARAGRAPH 1 -->
-      <p>Knew You was created to change that — by offering a space where beauty and personal health services are structured to support the needs of the whole family.</p>
+      <p>
+        Knew You was created to offer something different — a place where beauty
+        services, personal wellness, and community support are designed to serve
+        the whole family.
+      </p>
 
-      <!-- PARAGRAPH 2 -->
-      <p>We are building a first-of-its-kind Beauty &amp; Restoration Center in Highlands Ranch designed to feel less like a service provider and more like home.</p>
+      <p>
+        We are building a first-of-its-kind Beauty &amp; Restoration House in
+        Highlands Ranch designed to feel less like a service provider and more
+        like home.
+      </p>
 
-      <br>
-      <a href="#services" class="btn btn-primary" style="margin-top:8px;">Explore Services</a>
+      <p>
+        Knew You is designed not only as a space, but as a growing network of
+        values-aligned providers — extending care, connection, and support
+        throughout the community.
+      </p>
 
+      <a
+        href="#step-into-knew-you"
+        class="btn btn-primary"
+        style="margin-top: 24px"
+        >Explore Knew You</a
+      >
     </div>
   </div>
-
 </section>

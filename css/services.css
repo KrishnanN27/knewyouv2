@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════
    SERVICES.CSS — Section 8: Work With Us
-   Edit: row hover color, tag badge styles,
-         header layout
+   Clean offering list — no hover arrows or
+   clickable feel.
 ═══════════════════════════════════════════════ */
 
 #services {
@@ -39,7 +39,9 @@
 }
 
 /* List layout */
-.services-list { list-style: none; }
+.services-list {
+  list-style: none;
+}
 
 .service-row {
   display: grid;
@@ -48,38 +50,14 @@
   gap: 28px;
   padding: 40px 0;
   border-bottom: 1px solid var(--parchment);
-  position: relative;
-  transition: padding .25s ease, background .25s ease, margin .25s ease;
 }
 
-/* Arrow that appears on hover */
-.service-row::after {
-  content: '→';
-  position: absolute;
-  right: 12px; top: 50%;
-  transform: translateY(-50%) translateX(10px);
-  font-size: 1.3rem;
-  color: var(--gold);
-  opacity: 0;
-  transition: opacity .25s, transform .25s;
-}
-.service-row:hover {
-  padding-left: 16px;
-  padding-right: 48px;
-  margin: 0 -16px;
-  background: var(--cream);
-  border-radius: var(--radius);
-}
-.service-row:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
-}
-
+/* Gold dot accent on the left instead of number */
 .service-num {
   font-family: var(--f-display);
-  font-size: .82rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
   color: var(--gold);
 }
 
@@ -99,30 +77,36 @@
   max-width: 620px;
 }
 
-/* Tag badge */
+/* Tag badge — static, no hover state */
 .service-tag {
-  font-size: .62rem;
-  letter-spacing: .14em;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-light);
   padding: 7px 12px;
   border: 1px solid var(--parchment);
   border-radius: var(--radius);
   white-space: nowrap;
-  transition: border-color .22s, color .22s;
-}
-.service-row:hover .service-tag {
-  border-color: var(--gold);
-  color: var(--gold-deep);
 }
 
-/* ── Responsive ─────────────────────────── */
+/* ── Responsive ── */
 @media (max-width: 900px) {
-  .services-header        { flex-direction: column; align-items: flex-start; }
-  .services-header-right  { text-align: left; max-width: 100%; }
-  .service-tag            { display: none; } /* hides tag on medium screens */
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .services-header-right {
+    text-align: left;
+    max-width: 100%;
+  }
+  .service-tag {
+    display: none;
+  }
 }
 @media (max-width: 560px) {
-  .service-row            { grid-template-columns: 52px 1fr; gap: 16px; padding: 28px 0; }
-  .service-row:hover      { padding-left: 10px; padding-right: 10px; margin: 0 -10px; }
+  .service-row {
+    grid-template-columns: 52px 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
 }
