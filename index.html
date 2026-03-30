@@ -16,62 +16,22 @@
       rel="stylesheet"
     />
 
-    <!--
-  ════════════════════════════════════════════
-    STYLESHEETS — one file per section.
-    Global tokens, reset, buttons → base.css
-  ════════════════════════════════════════════ -->
+    <!-- STYLESHEETS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/hero.css" />
-    <link rel="stylesheet" href="css/orientation.css" />
-    <!-- NEW: 3-col section under hero -->
     <link rel="stylesheet" href="css/why.css" />
-    <link rel="stylesheet" href="css/building.css" />
-    <!-- pillars.css removed — section replaced by foundation MVF blocks -->
-    <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/step-into.css" />
-    <!-- NEW: Step Into Knew You -->
-    <link rel="stylesheet" href="css/coming-soon.css" />
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/building.css" />
     <link rel="stylesheet" href="css/founder.css" />
     <link rel="stylesheet" href="css/testimonials.css" />
     <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/coming-soon.css" />
     <link rel="stylesheet" href="css/connect.css" />
     <link rel="stylesheet" href="css/footer.css" />
   </head>
   <body>
-    <!--
-  ════════════════════════════════════════════
-    SECTION MAP (updated)
-    ────────────────────────────────────────
-    01-nav.html           Navigation bar
-    02-hero.html          Hero banner
-    02b-orientation.html  3-col quick overview  ← NEW
-    03-why.html           Why This Matters / Stats
-    04-building.html      What We're Building
-    05-pillars.html       REMOVED (commented out)
-    06-foundation.html    Mission / Vision / Faith ← UPDATED
-    06b-step-into.html    Step Into Knew You       ← NEW
-    07-coming-soon.html   Coming Soon block
-    08-founder.html       Meet the Founder
-    09-testimonials.html  Testimonials
-    10-services.html      Work With Us
-    11-connect.html       Contact form
-    12-footer.html        Footer
-    ────────────────────────────────────────
-    IMAGE PLACEHOLDERS TO SWAP:
-    images/ky-logo-tree.png     → nav logo (KY tree + dove, full)
-    images/ky-mark-tree.png     → hero corner mark (tree only, no wordmark)
-    images/hero-main.jpg        → hero desktop background
-    images/foundation/mvf-mission.jpg  → Mission block
-    images/foundation/mvf-vision.jpg   → Vision block
-    images/foundation/mvf-faith.jpg    → Faith block
-    images/step-into/restore.jpg       → A Space to Restore
-    images/step-into/family.jpg        → Family-Friendly By Design
-    images/step-into/social.jpg        → A Sober Social Space
-  ════════════════════════════════════════════
-  -->
-
     <!-- Global overlays -->
     <div id="grain" aria-hidden="true"></div>
     <div
@@ -82,27 +42,22 @@
       aria-valuemax="100"
     ></div>
 
-    <!-- Section slots -->
+    <!-- ── Section order ── -->
     <div data-section="sections/01-nav.html"></div>
     <div data-section="sections/02-hero.html"></div>
-    <div data-section="sections/02b-orientation.html"></div>
     <div data-section="sections/03-why.html"></div>
-    <div data-section="sections/04-building.html"></div>
-    <!-- <div data-section="sections/05-pillars.html"></div>  REMOVED per brief -->
-    <div data-section="sections/06-foundation.html"></div>
     <div data-section="sections/06b-step-into.html"></div>
-    <div data-section="sections/07-coming-soon.html"></div>
+    <div data-section="sections/06-foundation.html"></div>
+    <div data-section="sections/04-building.html"></div>
     <div data-section="sections/08-founder.html"></div>
     <div data-section="sections/09-testimonials.html"></div>
     <div data-section="sections/10-services.html"></div>
+    <div data-section="sections/07-coming-soon.html"></div>
     <div data-section="sections/11-connect.html"></div>
     <div data-section="sections/12-footer.html"></div>
 
-    <!-- ════════════════════════════════════════
-       JAVASCRIPT — unchanged from original
-  ════════════════════════════════════════ -->
     <script>
-      /* ── 1. Section Loader ───────────────────────────────── */
+      /* ── 1. Section Loader ── */
       (async function loadSections() {
         const slots = [...document.querySelectorAll("[data-section]")];
         await Promise.all(
@@ -125,7 +80,7 @@
         initPage();
       })();
 
-      /* ── 2. Main init ──────────────────────────────────── */
+      /* ── 2. Main init ── */
       function initPage() {
         /* Scroll Progress Bar */
         const bar = document.getElementById("progress-bar");
