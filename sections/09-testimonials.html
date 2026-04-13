@@ -49,7 +49,7 @@
       </blockquote>
       <div class="tcard-footer">
         <img
-          src="images/testimonials/Malkah.jpeg"
+          src="images/testimonials/Malkah.png"
           alt="Malkah Geller"
           class="tcard-avatar"
         />
@@ -87,14 +87,14 @@
     </div>
 
     <!-- TESTIMONIAL 4 — Alice -->
-    <div class="tcard">
+    <div class="tcard tcard--expandable">
       <div class="tcard-quote-mark" aria-hidden="true">&ldquo;</div>
       <div class="tcard-stars" aria-label="5 stars">
         <span aria-hidden="true">★</span><span aria-hidden="true">★</span>
         <span aria-hidden="true">★</span><span aria-hidden="true">★</span>
         <span aria-hidden="true">★</span>
       </div>
-      <blockquote>
+      <blockquote class="alice-quote">
         I've trusted Kalee with my hair for over 15 years, and I have never
         walked away unhappy. She's not only incredibly talented — her coloring,
         highlighting, and cuts are always flawless — but she's also one of the
@@ -108,8 +108,13 @@
         Kalee is an exceptional mother, friend, and community member. I am
         honored to be a client and friend.
       </blockquote>
+      <button class="tcard-read-more" id="alice-toggle">Read more</button>
       <div class="tcard-footer">
-        <div class="tcard-avatar tcard-avatar--initial">A</div>
+        <img
+          src="images/testimonials/Alice.jpeg"
+          alt="Alice Neill"
+          class="tcard-avatar"
+        />
         <div>
           <div class="tcard-author">Alice Neill</div>
           <div class="tcard-role">Client &amp; Friend</div>
@@ -118,3 +123,28 @@
     </div>
   </div>
 </section>
+
+<script>
+  var quote = document.querySelector(".alice-quote");
+  var btn = document.getElementById("alice-toggle");
+  var expanded = false;
+
+  quote.style.overflow = "hidden";
+  quote.style.display = "-webkit-box";
+  quote.style.webkitLineClamp = "5";
+  quote.style.webkitBoxOrient = "vertical";
+
+  btn.addEventListener("click", function () {
+    expanded = !expanded;
+    if (expanded) {
+      quote.style.display = "block";
+      quote.style.webkitLineClamp = "unset";
+      btn.textContent = "Read less";
+    } else {
+      quote.style.display = "-webkit-box";
+      quote.style.webkitLineClamp = "5";
+      quote.style.webkitBoxOrient = "vertical";
+      btn.textContent = "Read more";
+    }
+  });
+</script>

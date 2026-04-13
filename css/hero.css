@@ -209,7 +209,13 @@
   width: auto;
   display: block;
 }
-
+/* Centered KY mark in hero */
+.hero__mark-center {
+  height: clamp(100px, 16vw, 180px);
+  width: auto;
+  opacity: 0.92;
+  filter: drop-shadow(0 4px 24px rgba(212, 160, 23, 0.35));
+}
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .hero {
@@ -228,4 +234,30 @@
     font-size: 0.7rem;
     padding: 14px 20px;
   }
+}
+
+/* Brand wrap — decorative lines flanking the name */
+.hero__brand-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.hero__brand-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(229, 194, 103, 0.6));
+}
+
+.hero__brand-line:last-child {
+  background: linear-gradient(90deg, rgba(229, 194, 103, 0.6), transparent);
+}
+
+/* Remove old brand margin since wrap handles spacing */
+.hero__brand {
+  margin: 0;
 }
