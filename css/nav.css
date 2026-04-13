@@ -1,21 +1,21 @@
 /* ═══════════════════════════════════════════════
    NAV.CSS — Fixed top navigation bar
 ═══════════════════════════════════════════════ */
-
 #nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 8000;
-  padding: 6px clamp(24px, 6vw, 64px);
+  height: 80px;
+  padding: 0 clamp(24px, 6vw, 64px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   background: transparent;
+  overflow: visible;
   transition:
-    padding 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     background 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
