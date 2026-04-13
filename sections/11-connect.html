@@ -1,97 +1,465 @@
-<!-- ══════════════════════════════════════════
-     11-CONNECT.HTML — Contact Form
-     Edit: headline, body paragraphs, email address,
-           dropdown options, QR code link.
+<section
+  id="connect"
+  style="background: #1c0e05; padding: 100px 7vw; box-sizing: border-box"
+>
+  <div
+    id="connect-grid"
+    style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      max-width: 1160px;
+      margin: 0 auto;
+      align-items: start;
+    "
+  >
+    <!-- ═══ LEFT ═══ -->
+    <div>
+      <p
+        style="
+          font-family: &quot;DM Sans&quot;, sans-serif;
+          font-size: 0.68rem;
+          font-weight: 500;
+          letter-spacing: 0.24em;
+          text-transform: uppercase;
+          color: #e4c990;
+          margin: 0 0 18px;
+        "
+      >
+        Get in Touch
+      </p>
 
-     To make the form actually send emails:
-       Connect it to Formspree: add action="https://formspree.io/f/YOUR_ID"
-       to the <form> tag below, and set method="POST".
-══════════════════════════════════════════ -->
-<section id="connect">
-  <div class="connect-glow" aria-hidden="true"></div>
+      <h2
+        style="
+          font-family: &quot;Playfair Display&quot;, Georgia, serif;
+          font-size: clamp(2rem, 3.6vw, 3rem);
+          font-weight: 600;
+          color: #fff;
+          line-height: 1.1;
+          margin: 0 0 22px;
+        "
+      >
+        Let's Connect,<br /><em style="font-style: italic; color: #e4c990"
+          >Together.</em
+        >
+      </h2>
 
-  <div class="connect-layout">
+      <p
+        style="
+          font-family: &quot;Cormorant Garamond&quot;, Georgia, serif;
+          font-size: 1.06rem;
+          color: rgba(255, 255, 255, 0.6);
+          line-height: 1.85;
+          margin: 0 0 26px;
+        "
+      >
+        Whether you're exploring personal or family-centered services, curious
+        about upcoming events, or simply want to stay in the loop — we'd love to
+        hear from you.
+      </p>
 
-    <!-- LEFT: intro text + contact info -->
-    <div class="connect-left reveal-left">
-      <span class="eyebrow eyebrow--light">Get in Touch</span>
-
-      <!-- HEADLINE -->
-      <h2>Let's Connect,<br><em>Together.</em></h2>
-
-      <div class="connect-divider" aria-hidden="true"></div>
-
-      <!-- INTRO PARAGRAPHS -->
-      <p>Whether you're exploring personal or family-centered services, interested in upcoming events, curious about partnership opportunities, or simply want to learn more about what we're building — we'd love to hear from you.</p>
-      <p>As Knew You takes shape here in Highlands Ranch, every conversation matters.</p>
-
-      <!-- EMAIL LINK — update if email changes -->
-      <a href="mailto:kalee@knewyou.org" class="connect-email">
-        kalee@knewyou.org →
+      <a
+        href="mailto:connect@knewyou.org"
+        style="
+          display: inline-block;
+          font-family: &quot;Playfair Display&quot;, Georgia, serif;
+          font-size: 1rem;
+          font-style: italic;
+          color: #e4c990;
+          border-bottom: 1px solid rgba(228, 201, 144, 0.4);
+          padding-bottom: 3px;
+          margin-bottom: 26px;
+          text-decoration: none;
+        "
+      >
+        connect@knewyou.org
       </a>
 
-      <!-- QR block -->
-      <div class="qr-wrap">
+      <!-- Social -->
+      <div style="display: flex; gap: 12px; margin-bottom: 40px">
+        <a
+          href="https://www.instagram.com/knewyou.highlandsranch"
+          target="_blank"
+          rel="noopener"
+          style="
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-family: &quot;DM Sans&quot;, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 999px;
+            padding: 7px 15px;
+            text-decoration: none;
+            transition: color 0.2s;
+          "
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle
+              cx="17.5"
+              cy="6.5"
+              r="1"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+          Instagram
+        </a>
+        <a
+          href="https://www.facebook.com/share/1SDTNiNXtF/"
+          target="_blank"
+          rel="noopener"
+          style="
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-family: &quot;DM Sans&quot;, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 999px;
+            padding: 7px 15px;
+            text-decoration: none;
+          "
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            />
+          </svg>
+          Facebook
+        </a>
+      </div>
+
+      <!-- QR -->
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding-top: 28px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        "
+      >
         <img
-          src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=mailto:kalee@knewyou.org&bgcolor=1C0E05&color=C9A46B&margin=6"
+          src="https://api.qrserver.com/v1/create-qr-code/?size=88x88&data=mailto:connect@knewyou.org&bgcolor=1C0E05&color=C9A46B&margin=6"
           alt="Scan to email Knew You"
-          width="100" height="100"
+          width="88"
+          height="88"
           loading="lazy"
+          style="border-radius: 4px; flex-shrink: 0"
         />
-        <div class="qr-text">
-          <strong>Scan to Connect</strong>
-          Opens your email to reach us directly
+        <div>
+          <p
+            style="
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 0.68rem;
+              letter-spacing: 0.14em;
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.48);
+              margin: 0 0 4px;
+            "
+          >
+            Scan to Connect
+          </p>
+          <p
+            style="
+              font-family: &quot;Cormorant Garamond&quot;, Georgia, serif;
+              font-size: 0.88rem;
+              color: rgba(255, 255, 255, 0.28);
+              line-height: 1.5;
+              margin: 0;
+            "
+          >
+            Opens your email to reach us directly
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: contact form -->
-    <div class="form-right reveal-right">
-      <!-- NOTE: add action="https://formspree.io/f/..." and method="POST" to go live -->
-      <form novalidate>
-
-        <div class="frow-2">
-          <div class="frow">
-            <input type="text"  id="fname" name="first_name" placeholder=" " autocomplete="given-name"/>
-            <label for="fname">First Name</label>
+    <!-- ═══ RIGHT: FORM ═══ -->
+    <div>
+      <form novalidate style="display: flex; flex-direction: column; gap: 20px">
+        <!-- Name row -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 7px">
+            <label
+              for="ky-fname"
+              style="
+                font-family: &quot;DM Sans&quot;, sans-serif;
+                font-size: 0.65rem;
+                font-weight: 500;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.38);
+              "
+              >First Name</label
+            >
+            <input
+              type="text"
+              id="ky-fname"
+              name="first_name"
+              autocomplete="given-name"
+              placeholder="Jane"
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 4px;
+                padding: 11px 13px;
+                color: #fff;
+                font-family: &quot;DM Sans&quot;, sans-serif;
+                font-size: 0.92rem;
+                outline: none;
+                width: 100%;
+                box-sizing: border-box;
+              "
+            />
           </div>
-          <div class="frow">
-            <input type="text"  id="lname" name="last_name"  placeholder=" " autocomplete="family-name"/>
-            <label for="lname">Last Name</label>
+          <div style="display: flex; flex-direction: column; gap: 7px">
+            <label
+              for="ky-lname"
+              style="
+                font-family: &quot;DM Sans&quot;, sans-serif;
+                font-size: 0.65rem;
+                font-weight: 500;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.38);
+              "
+              >Last Name</label
+            >
+            <input
+              type="text"
+              id="ky-lname"
+              name="last_name"
+              autocomplete="family-name"
+              placeholder="Smith"
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 4px;
+                padding: 11px 13px;
+                color: #fff;
+                font-family: &quot;DM Sans&quot;, sans-serif;
+                font-size: 0.92rem;
+                outline: none;
+                width: 100%;
+                box-sizing: border-box;
+              "
+            />
           </div>
         </div>
 
-        <div class="frow">
-          <input type="email" id="email" name="email" placeholder=" " autocomplete="email"/>
-          <label for="email">Email Address</label>
+        <!-- Email -->
+        <div style="display: flex; flex-direction: column; gap: 7px">
+          <label
+            for="ky-email"
+            style="
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 0.65rem;
+              font-weight: 500;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.38);
+            "
+            >Email Address</label
+          >
+          <input
+            type="email"
+            id="ky-email"
+            name="email"
+            autocomplete="email"
+            placeholder="jane@example.com"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              border-radius: 4px;
+              padding: 11px 13px;
+              color: #fff;
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 0.92rem;
+              outline: none;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          />
         </div>
 
-        <!-- DROPDOWN — edit the <option> lines to change choices -->
-        <div class="frow">
-          <select id="interest" name="interest">
-            <option value="" disabled selected></option>
-            <option>Interested in personal or family-centered services</option>
-            <option>Looking to attend workshops or community events</option>
-            <option>Exploring partnership or provider opportunities</option>
-            <option>Interested in supporting the vision</option>
-            <option>Wanting to stay updated on our launch timeline</option>
+        <!-- Dropdown -->
+        <div style="display: flex; flex-direction: column; gap: 7px">
+          <label
+            for="ky-interest"
+            style="
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 0.65rem;
+              font-weight: 500;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.38);
+            "
+            >How Can We Help?</label
+          >
+          <select
+            id="ky-interest"
+            name="interest"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              border-radius: 4px;
+              padding: 11px 13px;
+              color: rgba(255, 255, 255, 0.7);
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 0.92rem;
+              outline: none;
+              width: 100%;
+              box-sizing: border-box;
+              appearance: none;
+              cursor: pointer;
+            "
+          >
+            <option value="" disabled selected style="background: #1c0e05">
+              Select an option…
+            </option>
+            <option style="background: #1c0e05; color: #fff">
+              Interested in personal or family-centered services
+            </option>
+            <option style="background: #1c0e05; color: #fff">
+              Looking to attend workshops or community events
+            </option>
+            <option style="background: #1c0e05; color: #fff">
+              Exploring partnership or provider opportunities
+            </option>
+            <option style="background: #1c0e05; color: #fff">
+              Interested in supporting the vision
+            </option>
+            <option style="background: #1c0e05; color: #fff">
+              Wanting to stay updated on our launch timeline
+            </option>
           </select>
-          <label for="interest">How Can We Help?</label>
         </div>
 
-        <div class="frow">
-          <textarea id="msg" name="message" placeholder=" "></textarea>
-          <label for="msg">Message (Optional)</label>
+        <!-- Message -->
+        <div style="display: flex; flex-direction: column; gap: 7px">
+          <label
+            for="ky-msg"
+            style="
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 0.65rem;
+              font-weight: 500;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.38);
+            "
+            >Message (Optional)</label
+          >
+          <textarea
+            id="ky-msg"
+            name="message"
+            placeholder="Tell us a little about what you're looking for…"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              border-radius: 4px;
+              padding: 11px 13px;
+              color: #fff;
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 0.92rem;
+              outline: none;
+              width: 100%;
+              box-sizing: border-box;
+              height: 108px;
+              resize: vertical;
+            "
+          ></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-form-submit">
+        <!-- Submit -->
+        <button
+          type="submit"
+          style="
+            background: #c9a46b;
+            color: #3d1f0a;
+            border: none;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: &quot;DM Sans&quot;, sans-serif;
+            font-size: 0.76rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 4px;
+            width: 100%;
+          "
+        >
           Send Message
         </button>
 
-        <p class="form-footer-note">Someone from our team will be in touch soon.</p>
-
+        <p
+          style="
+            font-family: &quot;Cormorant Garamond&quot;, Georgia, serif;
+            font-style: italic;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.25);
+            text-align: center;
+            margin: 0;
+          "
+        >
+          Someone from our team will be in touch soon.
+        </p>
       </form>
     </div>
-
   </div>
+
+  <!-- Responsive collapse -->
+  <style>
+    @media (max-width: 860px) {
+      #connect-grid {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      #connect-grid form > div:first-child {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    #connect input:focus,
+    #connect textarea:focus,
+    #connect select:focus {
+      border-color: #c9a46b !important;
+      background: rgba(201, 164, 107, 0.06) !important;
+    }
+    #connect .connect-social-btn:hover {
+      color: #e4c990 !important;
+      border-color: rgba(228, 201, 144, 0.45) !important;
+    }
+  </style>
 </section>

@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="css/founder.css" />
     <link rel="stylesheet" href="css/testimonials.css" />
     <link rel="stylesheet" href="css/services.css" />
-    <link rel="stylesheet" href="css/coming-soon.css" />
     <link rel="stylesheet" href="css/connect.css" />
-    <link rel="stylesheet" href="css/footer.css" />
   </head>
   <body>
     <!-- Global overlays -->
@@ -54,7 +52,6 @@
     <div data-section="sections/09-testimonials.html"></div>
     <div data-section="sections/10-services.html"></div>
     <div data-section="sections/11-connect.html"></div>
-    <div data-section="sections/12-footer.html"></div>
 
     <script>
       /* ── 1. Section Loader ── */
@@ -182,10 +179,13 @@
               }
             });
           },
-          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+          { threshold: 0.05, rootMargin: "0px 0px 0px 0px" },
         );
-        revealEls.forEach((el) => observer.observe(el));
-
+        revealEls.forEach((el) => {
+          observer.observe(el);
+          /* Fallback — force visible after 1.2s in case observer misses it */
+          setTimeout(() => el.classList.add("visible"), 1200);
+        });
         /* Card Tilt */
         document.querySelectorAll(".pillar-card, .tcard").forEach((card) => {
           card.addEventListener("mousemove", (e) => {
