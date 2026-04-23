@@ -1,3 +1,7 @@
+/* ═══════════════════════════════════════════════
+   TESTIMONIALS.CSS
+═══════════════════════════════════════════════ */
+
 #testimonials {
   background: var(--brown-deep);
   padding: var(--section-v) var(--section-h);
@@ -9,16 +13,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(
-      ellipse 600px 400px at 15% 60%,
-      rgba(201, 164, 107, 0.07) 0%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 400px 500px at 85% 30%,
-      rgba(107, 58, 31, 0.3) 0%,
-      transparent 70%
-    );
+    radial-gradient(ellipse 600px 400px at 15% 60%, rgba(201,164,107,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 500px at 85% 30%, rgba(107,58,31,.3) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -30,7 +26,7 @@
 }
 .testimonials-header h2 {
   font-family: var(--f-display);
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-size: clamp(2.2rem, 4vw, 3.2rem); /* ↑ was clamp(1.9rem, 4vw, 3rem) */
   font-weight: 600;
   color: #fff;
 }
@@ -45,49 +41,39 @@
 }
 
 .tcard {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(201, 164, 107, 0.15);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(201,164,107,.15);
   border-radius: var(--radius);
   padding: 44px 28px 32px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition:
-    background 0.3s,
-    transform 0.4s,
-    box-shadow 0.4s;
+  transition: background .3s, transform .4s, box-shadow .4s;
 }
 .tcard::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(201, 164, 107, 0.06) 0%,
-    transparent 60%
-  );
+  background: linear-gradient(135deg, rgba(201,164,107,.06) 0%, transparent 60%);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 .tcard:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,.08);
   transform: translateY(-6px);
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 24px 56px rgba(0,0,0,.32);
 }
-.tcard:hover::before {
-  opacity: 1;
-}
+.tcard:hover::before { opacity: 1; }
 
 .tcard-quote-mark {
   font-family: var(--f-display);
   font-size: 5.5rem;
-  line-height: 0.8;
+  line-height: .8;
   color: var(--gold);
-  opacity: 0.22;
+  opacity: .22;
   position: absolute;
-  top: 12px;
-  left: 18px;
+  top: 12px; left: 18px;
   pointer-events: none;
   user-select: none;
 }
@@ -99,16 +85,16 @@
 }
 .tcard-stars span {
   color: var(--gold);
-  font-size: 0.88rem;
+  font-size: 1rem; /* ↑ was 0.88rem */
 }
 
 .tcard blockquote {
   font-family: var(--f-elegant);
   font-style: italic;
-  font-size: 1.02rem;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.8;
-  margin: 20px 0 20px;
+  font-size: 1.15rem; /* ↑ was 1.02rem */
+  color: rgba(255,255,255,.82);
+  line-height: 1.85;
+  margin: 20px 0;
   position: relative;
   z-index: 1;
   flex: 1;
@@ -122,29 +108,24 @@
 .tcard-read-more {
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(201, 164, 107, 0.6);
+  border-bottom: 1px solid rgba(201,164,107,.6);
   padding: 0 0 1px;
   margin: 0 0 20px;
   font-family: var(--f-body);
-  font-size: 0.72rem;
+  font-size: 0.74rem; /* ↑ was 0.72rem */
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--gold);
   cursor: pointer;
   display: inline-block;
-  opacity: 0.85;
-  transition:
-    opacity 0.2s,
-    border-color 0.2s;
+  opacity: .85;
+  transition: opacity .2s, border-color .2s;
   position: relative;
   z-index: 1;
   align-self: flex-start;
 }
-.tcard-read-more:hover {
-  opacity: 1;
-  border-color: var(--gold);
-}
+.tcard-read-more:hover { opacity: 1; border-color: var(--gold); }
 
 /* Footer */
 .tcard-footer {
@@ -153,47 +134,49 @@
   gap: 14px;
   margin-top: auto;
   padding-top: 20px;
-  border-top: 1px solid rgba(201, 164, 107, 0.12);
+  border-top: 1px solid rgba(201,164,107,.12);
   position: relative;
   z-index: 1;
 }
 
 .tcard-avatar {
-  width: 46px;
-  height: 46px;
+  width: 48px; /* ↑ was 46px */
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  border: 2px solid rgba(201, 164, 107, 0.4);
+  border: 2px solid rgba(201,164,107,.4);
   flex-shrink: 0;
 }
 
 .tcard-author {
   font-family: var(--f-body);
-  font-size: 0.74rem;
+  font-size: 0.8rem; /* ↑ was 0.74rem */
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--gold-light);
 }
 .tcard-role {
-  font-size: 0.71rem;
-  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.75rem; /* ↑ was 0.71rem */
+  color: rgba(255,255,255,.38);
   margin-top: 3px;
-  letter-spacing: 0.04em;
+  letter-spacing: .04em;
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 1100px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .tcard blockquote  { font-size: 1.12rem; }
 }
 @media (max-width: 580px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
+  .testimonials-grid { grid-template-columns: 1fr; }
   .tcard {
     padding: 36px 24px 28px;
   }
+  .tcard blockquote  { font-size: 1.1rem; }
+  .tcard-author      { font-size: 0.78rem; }
+}
+@media (max-width: 400px) {
+  .tcard blockquote  { font-size: 1.08rem; }
 }

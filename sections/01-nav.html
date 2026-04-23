@@ -18,10 +18,14 @@
 <!-- ── Main nav bar ── -->
 <nav id="nav" aria-label="Main navigation">
   <a href="#hero" class="nav-logo" aria-label="Knew You — home">
+    <!-- Skeleton shimmer shown while image loads -->
+    <span class="nav-logo-skeleton" aria-hidden="true"></span>
     <img
       src="images/logo/logo.png"
       alt="Knew You — KY tree and dove mark"
       class="nav-logo-img"
+      style="opacity:0; transition: opacity .35s ease;"
+      onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
     />
   </a>
 
@@ -50,3 +54,34 @@
     </button>
   </div>
 </nav>
+
+<style>
+  /* Skeleton shimmer — matches nav-logo-img dimensions */
+  .nav-logo-skeleton {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background: linear-gradient(
+      90deg,
+      rgba(201,164,107,.08) 25%,
+      rgba(201,164,107,.18) 50%,
+      rgba(201,164,107,.08) 75%
+    );
+    background-size: 200% 100%;
+    animation: nav-logo-shimmer 1.4s infinite;
+    position: absolute;
+  }
+
+  @keyframes nav-logo-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Keep logo wrapper positioned so skeleton overlays correctly */
+  .nav-logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+</style>

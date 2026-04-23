@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════════
    WHY.CSS — Section 2: Why This Matters
-   Edit: quote text size, stat strip, body columns
 ═══════════════════════════════════════════════ */
 
 #why {
@@ -10,7 +9,6 @@
   overflow: hidden;
 }
 
-/* Soft glow ornament */
 .why-ornament {
   position: absolute;
   right: -80px; top: -80px;
@@ -26,11 +24,11 @@
 /* Large pull-quote */
 .why-quote {
   font-family: var(--f-elegant);
-  font-size: clamp(1.35rem, 3vw, 2.2rem);
+  font-size: clamp(1.75rem, 3vw, 2.4rem); /* ↑ was clamp(1.5rem, 3vw, 2.2rem) */
   font-weight: 300;
   font-style: italic;
   color: var(--text-main);
-  line-height: 1.5;
+  line-height: 1.55;
   margin: 28px 0 40px;
   padding-left: 32px;
   position: relative;
@@ -58,7 +56,7 @@
 }
 .why-body p {
   font-family: var(--f-elegant);
-  font-size: 1.1rem;
+  font-size: 1.22rem; /* ↑ was 1.12rem */
   color: var(--text-muted);
   line-height: 1.9;
 }
@@ -79,33 +77,82 @@
 .why-stat:last-child { border-right: none; }
 .why-stat-n {
   font-family: var(--f-display);
-  font-size: 2.8rem;
+  font-size: 3.2rem; /* ↑ was 2.8rem */
   font-weight: 600;
   color: var(--brown-deep);
   line-height: 1;
 }
 .why-stat-n em { font-style: italic; color: var(--gold-deep); }
 .why-stat-l {
-  font-size: .68rem;
-  letter-spacing: .14em;
+  font-size: .75rem; /* ↑ was 0.68rem */
+  letter-spacing: .13em;
   text-transform: uppercase;
   color: var(--text-light);
-  margin-top: 8px;
-  line-height: 1.4;
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
-/* ── Responsive ─────────────────────────── */
+/* ── Tablet (900px) ── */
 @media (max-width: 900px) {
   .why-stats { grid-template-columns: 1fr 1fr; }
   .why-stat  { border-bottom: 1px solid var(--parchment); }
   .why-stat:nth-child(2n) { border-right: none; }
+  .why-stat-n { font-size: 2.8rem; }
 }
+
+/* ── Tablet narrow (768px) ── */
+@media (max-width: 768px) {
+  .why-quote {
+    font-size: clamp(1.6rem, 4vw, 2rem);
+    padding-left: 24px;
+  }
+  .why-body { gap: 28px 44px; }
+  .why-body p { font-size: 1.18rem; }
+  .why-stat-n { font-size: 2.6rem; }
+  .why-stat-l { font-size: 0.74rem; }
+}
+
+/* ── Mobile (680px) ── */
 @media (max-width: 680px) {
-  .why-body  { grid-template-columns: 1fr; gap: 24px; }
+  .why-body { grid-template-columns: 1fr; gap: 24px; }
+  .why-body p { font-size: 1.18rem; }
   .why-stats { grid-template-columns: 1fr 1fr; }
-  .why-quote { font-size: clamp(1.1rem, 5vw, 1.5rem); padding-left: 20px; }
+  .why-quote {
+    font-size: clamp(1.55rem, 5vw, 1.8rem);
+    padding-left: 20px;
+    margin-bottom: 28px;
+  }
+  .why-stat { padding: 28px 16px; }
+  .why-stat-n { font-size: 2.4rem; }
+  .why-stat-l { font-size: 0.72rem; }
 }
+
+/* ── Mobile small (480px) ── */
+@media (max-width: 480px) {
+  .why-quote {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    padding-left: 18px;
+  }
+  .why-quote::before {
+    font-size: 5rem;
+    left: -12px;
+  }
+  .why-body p {
+    font-size: 1.15rem;
+    line-height: 1.85;
+  }
+  .why-stat-n { font-size: 2.2rem; }
+  .why-stat-l {
+    font-size: 0.7rem;
+    letter-spacing: 0.11em;
+  }
+  .why-stat { padding: 24px 12px; }
+}
+
+/* ── Mobile XS (400px) ── */
 @media (max-width: 400px) {
   .why-stats { grid-template-columns: 1fr; }
   .why-stat  { border-right: none; }
+  .why-stat-n { font-size: 2.6rem; }
 }

@@ -1,7 +1,5 @@
 /* ═══════════════════════════════════════════════
    SERVICES.CSS — Section 8: Work With Us
-   Clean offering list — no hover arrows or
-   clickable feel.
 ═══════════════════════════════════════════════ */
 
 #services {
@@ -21,7 +19,7 @@
 }
 .services-header-left h2 {
   font-family: var(--f-display);
-  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 4vw, 3.4rem); /* ↑ was clamp(1.9rem, 4vw, 3.2rem) */
   font-weight: 600;
   color: var(--brown-deep);
   line-height: 1.1;
@@ -30,10 +28,10 @@
 .services-header-right {
   font-family: var(--f-elegant);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* ↑ was 1.1rem */
   color: var(--text-muted);
-  max-width: 320px;
-  line-height: 1.7;
+  max-width: 340px;
+  line-height: 1.75;
   text-align: right;
   flex-shrink: 0;
 }
@@ -52,10 +50,10 @@
   border-bottom: 1px solid var(--parchment);
 }
 
-/* Gold dot accent on the left instead of number */
+/* Service number */
 .service-num {
   font-family: var(--f-display);
-  font-size: 0.82rem;
+  font-size: 0.92rem; /* ↑ was 0.82rem */
   font-weight: 600;
   letter-spacing: 0.15em;
   color: var(--gold);
@@ -63,27 +61,27 @@
 
 .service-body h3 {
   font-family: var(--f-display);
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* ↑ was 1.2rem */
   font-weight: 600;
   color: var(--brown-deep);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   line-height: 1.25;
 }
 .service-body p {
   font-family: var(--f-elegant);
-  font-size: 1.02rem;
+  font-size: 1.15rem; /* ↑ was 1.02rem */
   color: var(--text-muted);
-  line-height: 1.75;
+  line-height: 1.8;
   max-width: 620px;
 }
 
-/* Tag badge — static, no hover state */
+/* Tag badge */
 .service-tag {
-  font-size: 0.62rem;
+  font-size: 0.68rem; /* ↑ was 0.62rem */
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-light);
-  padding: 7px 12px;
+  padding: 7px 14px;
   border: 1px solid var(--parchment);
   border-radius: var(--radius);
   white-space: nowrap;
@@ -98,15 +96,25 @@
   .services-header-right {
     text-align: left;
     max-width: 100%;
+    font-size: 1.15rem;
   }
-  .service-tag {
-    display: none;
-  }
+  .service-tag { display: none; }
+  .service-body h3 { font-size: 1.3rem; }
+  .service-body p  { font-size: 1.12rem; }
 }
+
 @media (max-width: 560px) {
   .service-row {
-    grid-template-columns: 52px 1fr;
+    grid-template-columns: 44px 1fr;
     gap: 16px;
     padding: 28px 0;
   }
+  .service-num { font-size: 0.85rem; }
+  .service-body h3 { font-size: 1.2rem; }
+  .service-body p  { font-size: 1.08rem; line-height: 1.75; }
+}
+
+@media (max-width: 400px) {
+  .service-body h3 { font-size: 1.15rem; }
+  .service-body p  { font-size: 1.05rem; }
 }

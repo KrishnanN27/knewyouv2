@@ -34,9 +34,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
-  /* clip (not hidden) — prevents horizontal scroll without creating a new
-     scroll container, so position:fixed stays fixed on every section. */
+  font-size: 18px; /* ↑ was 16px — scales all rem values site-wide */
   overflow-x: clip;
 }
 body {
@@ -62,9 +60,9 @@ ul { list-style: none; }
   align-items: center;
   gap: 10px;
   font-family: var(--f-body);
-  font-size: .68rem;
+  font-size: .72rem; /* ↑ was 0.68rem */
   font-weight: 500;
-  letter-spacing: .24em;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 16px;
@@ -92,7 +90,7 @@ ul { list-style: none; }
 .btn {
   display: inline-block;
   font-family: var(--f-body);
-  font-size: .78rem;
+  font-size: .8rem; /* ↑ was 0.78rem */
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -211,26 +209,26 @@ ul { list-style: none; }
 
 /* ════════════════════════════════════════════════
    GLOBAL RESPONSIVE OVERRIDES
-   These adjust spacing / layout at key breakpoints.
-   Section-specific responsive rules live in each
-   section's own CSS file.
 ════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   :root {
     --section-v: 96px;
     --section-h: 6vw;
   }
+  html { font-size: 17px; }
 }
 @media (max-width: 768px) {
   :root {
     --section-v: 72px;
     --section-h: 6vw;
   }
+  html { font-size: 16.5px; }
 }
 @media (max-width: 480px) {
   :root {
     --section-v: 56px;
     --section-h: 5vw;
   }
-  .btn { padding: 14px 28px; font-size: .74rem; }
+  html { font-size: 16px; }
+  .btn { padding: 14px 28px; font-size: .76rem; }
 }
