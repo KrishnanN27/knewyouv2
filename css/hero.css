@@ -7,9 +7,9 @@
   min-height: 100svh;
   overflow: hidden;
   display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 140px 24px 80px;
+  place-items: center start;
+  text-align: left;
+  padding: 140px clamp(32px, 8vw, 120px) 80px;
 }
 
 .hero__bg {
@@ -57,14 +57,14 @@
   color: #fff9f2;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0;
 }
 
-/* Eyebrow */
+/* Eyebrow above brand */
 .hero__eyebrow {
   font-family: var(--f-body);
-  font-size: clamp(0.72rem, 1.8vw, 0.8rem);
+  font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -74,7 +74,7 @@
 
 /* Brand name */
 .hero__brand {
-  margin: 0;
+  margin: 0 0 10px;
   font-family: var(--f-display);
   font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 600;
@@ -108,7 +108,7 @@
 .hero__headline {
   margin: 0;
   font-family: var(--f-display);
-  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  font-size: clamp(1.35rem, 2.8vw, 2.1rem);
   line-height: 1.22;
   font-weight: 500;
   color: rgba(255, 249, 242, 0.92);
@@ -116,7 +116,7 @@
 
 /* Gold divider */
 .hero__divider {
-  margin: 24px auto 20px;
+  margin: 24px 0 20px;
   width: min(100%, 360px);
   display: flex;
   align-items: center;
@@ -140,7 +140,7 @@
 .hero__subhead {
   margin: 0 0 10px;
   font-family: var(--f-elegant);
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
   line-height: 1.28;
   font-weight: 400;
   font-style: italic;
@@ -153,7 +153,7 @@
 .hero__small {
   margin: 0 0 36px;
   font-family: var(--f-elegant);
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
   line-height: 1.4;
   font-style: italic;
   color: rgba(229, 194, 103, 0.82);
@@ -163,10 +163,11 @@
 /* ── Buttons ── */
 .hero__actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
   flex-wrap: wrap;
 }
+
 .btn {
   min-width: 190px;
   padding: 15px 28px;
@@ -216,33 +217,14 @@
   filter: drop-shadow(0 4px 24px rgba(212, 160, 23, 0.35));
 }
 
-/* Brand wrap */
-.hero__brand-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  width: 100%;
-  margin-bottom: 10px;
-  position: relative;
-}
-.hero__brand-line {
-  flex: 1;
-  max-width: 80px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(229, 194, 103, 0.6));
-}
-.hero__brand-line:last-child {
-  background: linear-gradient(90deg, rgba(229, 194, 103, 0.6), transparent);
-}
-
-/* ── Tablet (768px) ── */
+/* ── Mobile ── */
 @media (max-width: 768px) {
   .hero {
     padding-top: 120px;
     padding-bottom: 60px;
-    padding-left: 28px;
-    padding-right: 28px;
+  }
+  .hero__bg {
+    object-position: left center;
   }
   .hero__mark {
     height: clamp(40px, 9vw, 56px);
@@ -250,64 +232,36 @@
   .hero__mark-wrap {
     top: 80px;
   }
-  .hero__headline {
-    font-size: 1.55rem;
-  }
-  .hero__subhead {
-    font-size: 1.45rem;
-  }
-  .hero__small {
-    font-size: 1.08rem;
-  }
-  .hero__mark-center {
-    height: clamp(88px, 18vw, 120px);
-  }
-  .btn {
-    min-width: 160px;
-    font-size: 0.72rem;
-    padding: 14px 22px;
-  }
-}
-
-/* ── Mobile (480px) ── */
-@media (max-width: 480px) {
-  .hero {
-    padding-top: 110px;
-    padding-bottom: 52px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .hero__eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    margin-bottom: 14px;
-  }
-  .hero__headline {
-    font-size: 1.45rem;
-    line-height: 1.28;
-  }
-  .hero__subhead {
-    font-size: 1.3rem;
-    line-height: 1.35;
-  }
-  .hero__small {
-    font-size: 1.05rem;
-    margin-bottom: 28px;
-  }
-  .hero__mark-center {
-    height: 88px;
-  }
-  .hero__divider {
-    margin: 18px auto 16px;
-  }
   .btn {
     width: 100%;
     min-width: 0;
-    font-size: 0.72rem;
-    padding: 15px 20px;
+    font-size: 0.7rem;
+    padding: 14px 20px;
   }
-  .hero__actions {
-    gap: 12px;
-    width: 100%;
-  }
+}
+
+/* Brand wrap */
+.hero__brand-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.hero__brand-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(229, 194, 103, 0.6));
+}
+
+.hero__brand-line:last-child {
+  background: linear-gradient(90deg, rgba(229, 194, 103, 0.6), transparent);
+}
+
+/* Remove old brand margin since wrap handles spacing */
+.hero__brand {
+  margin: 0;
 }
