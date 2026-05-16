@@ -28,8 +28,6 @@
     <link rel="stylesheet" href="css/testimonials.css" />
     <link rel="stylesheet" href="css/services.css" />
     <link rel="stylesheet" href="css/transition.css" />
-    <!-- ADD THIS -->
-
     <link rel="stylesheet" href="css/connect.css" />
   </head>
   <body>
@@ -44,7 +42,6 @@
     ></div>
 
     <!-- ── Section order ── -->
-    <!-- ── Section order ── -->
     <div data-section="sections/01-nav.html"></div>
     <div data-section="sections/02-hero.html"></div>
     <div data-section="sections/03-why.html"></div>
@@ -55,8 +52,6 @@
     <div data-section="sections/09-testimonials.html"></div>
     <div data-section="sections/10-services.html"></div>
     <div data-section="sections/10b-transition.html"></div>
-    <!-- ADD THIS -->
-
     <div data-section="sections/11-connect.html"></div>
 
     <script>
@@ -192,6 +187,7 @@
           /* Fallback — force visible after 1.2s in case observer misses it */
           setTimeout(() => el.classList.add("visible"), 1200);
         });
+
         /* Card Tilt */
         document.querySelectorAll(".pillar-card, .tcard").forEach((card) => {
           card.addEventListener("mousemove", (e) => {
@@ -233,6 +229,39 @@
             }
           });
         });
+
+        /* Contact Form — prevent redirect */
+        const kyForm = document.getElementById("ky-contact-form");
+        const kyBtn = document.getElementById("ky-submit-btn");
+        const kySuccess = document.getElementById("ky-success-msg");
+
+        if (kyForm) {
+          kyForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            kyBtn.textContent = "Sending…";
+            kyBtn.disabled = true;
+
+            try {
+              const response = await fetch(kyForm.action, {
+                method: "POST",
+                body: new FormData(kyForm),
+                headers: { Accept: "application/json" },
+              });
+
+              if (response.ok) {
+                kyForm.reset();
+                kyBtn.style.display = "none";
+                kySuccess.style.display = "block";
+              } else {
+                kyBtn.textContent = "Something went wrong — try again";
+                kyBtn.disabled = false;
+              }
+            } catch (err) {
+              kyBtn.textContent = "Something went wrong — try again";
+              kyBtn.disabled = false;
+            }
+          });
+        }
       } // end initPage
     </script>
   </body>

@@ -59,7 +59,7 @@
       </p>
 
       <a
-        href="mailto:connect@knewyou.org"
+        href="mailto:kalee@knewyou.org"
         style="
           display: inline-block;
           font-family: &quot;Playfair Display&quot;, Georgia, serif;
@@ -72,7 +72,7 @@
           text-decoration: none;
         "
       >
-        connect@knewyou.org
+        kalee@knewyou.org
       </a>
 
       <!-- Social -->
@@ -169,7 +169,7 @@
         "
       >
         <img
-          src="https://api.qrserver.com/v1/create-qr-code/?size=88x88&data=mailto:connect@knewyou.org&bgcolor=1C0E05&color=C9A46B&margin=6"
+          src="https://api.qrserver.com/v1/create-qr-code/?size=88x88&data=mailto:kalee@knewyou.org&bgcolor=1C0E05&color=C9A46B&margin=6"
           alt="Scan to email Knew You"
           width="88"
           height="88"
@@ -207,6 +207,7 @@
     <!-- ═══ RIGHT: FORM ═══ -->
     <div>
       <form
+        id="ky-contact-form"
         action="https://formspree.io/f/mkoewoen"
         method="POST"
         novalidate
@@ -408,6 +409,7 @@
         <!-- Submit -->
         <button
           type="submit"
+          id="ky-submit-btn"
           style="
             background: #c9a46b;
             color: #3d1f0a;
@@ -426,6 +428,22 @@
         >
           Send Message
         </button>
+
+        <!-- Success message (hidden by default) -->
+        <p
+          id="ky-success-msg"
+          style="
+            display: none;
+            font-family: &quot;Cormorant Garamond&quot;, Georgia, serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: #e4c990;
+            text-align: center;
+            margin: 0;
+          "
+        >
+          Thank you — someone from our team will be in touch soon.
+        </p>
 
         <p
           style="
@@ -467,4 +485,36 @@
       border-color: rgba(228, 201, 144, 0.45) !important;
     }
   </style>
+
+  <script>
+    const form = document.getElementById("ky-contact-form");
+    const submitBtn = document.getElementById("ky-submit-btn");
+    const successMsg = document.getElementById("ky-success-msg");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      submitBtn.textContent = "Sending…";
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          form.reset();
+          submitBtn.style.display = "none";
+          successMsg.style.display = "block";
+        } else {
+          submitBtn.textContent = "Something went wrong — try again";
+          submitBtn.disabled = false;
+        }
+      } catch (err) {
+        submitBtn.textContent = "Something went wrong — try again";
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 </section>
