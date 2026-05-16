@@ -31,6 +31,48 @@
     <link rel="stylesheet" href="css/connect.css" />
   </head>
   <body>
+    <!-- Page Loader -->
+    <div
+      id="ky-loader"
+      style="
+        position: fixed;
+        inset: 0;
+        background: #1c0e05;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        transition: opacity 0.6s ease;
+      "
+    >
+      <img
+        src="images/logo/ky-mark-tree.png"
+        alt="Knew You"
+        style="
+          height: 72px;
+          width: auto;
+          opacity: 0.9;
+          filter: drop-shadow(0 4px 24px rgba(212, 160, 23, 0.4));
+          animation: loaderPulse 1.5s ease-in-out infinite;
+        "
+      />
+      <style>
+        @keyframes loaderPulse {
+          0%,
+          100% {
+            opacity: 0.5;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.06);
+          }
+        }
+      </style>
+    </div>
+
     <!-- Global overlays -->
     <div id="grain" aria-hidden="true"></div>
     <div
@@ -80,6 +122,15 @@
 
       /* ── 2. Main init ── */
       function initPage() {
+        /* Page Loader */
+        const loader = document.getElementById("ky-loader");
+        if (loader) {
+          setTimeout(() => {
+            loader.style.opacity = "0";
+            setTimeout(() => loader.remove(), 600);
+          }, 2000);
+        }
+
         /* Scroll Progress Bar */
         const bar = document.getElementById("progress-bar");
         if (bar) {

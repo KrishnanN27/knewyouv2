@@ -108,8 +108,8 @@
 .hero__headline {
   margin: 0;
   font-family: var(--f-display);
-  font-size: clamp(2.5rem, 7vw, 6rem);
-  line-height: 1.08;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  line-height: 1.1;
   font-weight: 500;
   color: rgba(255, 249, 242, 0.92);
 }
